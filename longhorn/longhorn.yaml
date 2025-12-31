@@ -13,7 +13,9 @@ spec:
       helm:
         valuesObject: # using this instead of the values.yaml file since the file was not working
           defaultSettings:
+            allowCollectingLonghornUsageMetrics: false
             defaultDataPath: /var/mnt/longhorn
+            storageReservedPercentageForDefaultDisk: 0
           preUpgradeChecker:
             jobEnabled: false
       repoURL: https://charts.longhorn.io/
