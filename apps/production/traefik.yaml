@@ -57,6 +57,12 @@ spec:
         #   - "--entryPoints.web.http.redirections.to=websecure"
         #   - "--entryPoints.web.http.redirections.scheme=https"
         #   - "--entryPoints.web.http.redirections.permanent=true"
+        securityContext:
+          seccompProfile:
+            type: RuntimeDefault
+        podSecurityContext:
+          seccompProfile:
+            type: RuntimeDefault
   destination:
     server: https://kubernetes.default.svc
     namespace: traefik
