@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/hausteen/kubernetes_applications.git
     targetRevision: HEAD
-    path: cilium-manifests
+    path: cilium_manifests
     directory:
   destination:
     server: https://kubernetes.default.svc

@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gateway_api_manifests
+  name: gateway-api-manifests
   namespace: argocd
   annotations:
     argocd.argoproj.io/sync-wave: "3"
