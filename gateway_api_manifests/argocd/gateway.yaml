@@ -1,0 +1,28 @@
+# Please note that Gateway listener ports must match the configured EntryPoint ports of the Traefik deployment.
+# In case they do not match, an ERROR message is logged, and the resource status is updated accordingly.
+# https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: traefik
+  namespace: argocd
+spec:
+  gatewayClassName: traefik
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+      allowedRoutes:
+        namespaces:
+          from: Same
+    - name: https
+      protocol: HTTPS
+      port: 443
+      allowedRoutes:
+        namespaces:
+          from: Same
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - name: secret-tls
+            namespace: traefik
