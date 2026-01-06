@@ -22,5 +22,5 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: secret-tls
+          - name: hunt-internal-domain-tls-termination-secret
             namespace: gateway-api
