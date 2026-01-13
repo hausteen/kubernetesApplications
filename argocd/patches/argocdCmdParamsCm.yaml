@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: argocd-cmd-params-cm
 data:
-  server.insecure: "true" # we don't need argocd to handle tls since istio will take care of it
+  server.insecure: true # we don't need argocd to handle tls since istio will take care of it
