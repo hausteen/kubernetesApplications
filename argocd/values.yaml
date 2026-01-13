@@ -1,5 +1,0 @@
-configs:
-  cm:
-    kustomize.buildOptions: "--enable-helm --load-restrictor LoadRestrictionsNone" # let kustomize render helm charts and deal with namespaces correctly?
-  params:
-    server.insecure: true # we don't need argocd to handle tls since istio will take care of it
