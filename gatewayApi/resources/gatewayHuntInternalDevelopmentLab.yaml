@@ -2,7 +2,7 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: hunt-internal-development-lab
+  name: huntInternalDevelopmentLab
   namespace: gateway-api
 spec:
   gatewayClassName: gateway-class
@@ -22,5 +22,5 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: hunt-internal-development-lab-tls-termination-secret
+          - name: huntInternalDevelopmentLabTlsTerminationSecret
             namespace: gateway-api
