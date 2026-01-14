@@ -3,5 +3,5 @@ kind: ConfigMap
 metadata:
   name: argocd-cm
 data:
-  kustomize.buildOptions: --enable-helm --load-restrictor LoadRestrictionsNone
-  users.anonymous.enabled: "false"
+  kustomize.buildOptions: "--enable-helm --load-restrictor LoadRestrictionsNone" # this must stay as a string
+  users.anonymous.enabled: "false" # this must stay as a string
