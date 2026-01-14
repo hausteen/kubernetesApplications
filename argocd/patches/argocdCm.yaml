@@ -4,4 +4,4 @@ metadata:
   name: argocd-cm
 data:
   kustomize.buildOptions: --enable-helm --load-restrictor LoadRestrictionsNone
-  users.anonymous.enabled: false
+  users.anonymous.enabled: "false"
