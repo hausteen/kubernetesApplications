@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hausteen/kubernetes_applications.git
+    repoURL: https://github.com/hausteen/kubernetesApplications.git
     path: longhorn
     targetRevision: HEAD
   destination:

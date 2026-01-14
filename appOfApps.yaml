@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/hausteen/kubernetes_applications.git
+    repoURL: https://github.com/hausteen/kubernetesApplications.git
     targetRevision: HEAD
     path: apps
   destination:
