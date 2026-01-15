@@ -3,7 +3,7 @@
 apiVersion: "cilium.io/v2"
 kind: CiliumLoadBalancerIPPool
 metadata:
-  name: outsideTheClusterDevelopmentNetwork
+  name: development-network-outside-the-cluster
 spec:
   blocks:
     - start: "192.168.20.80"

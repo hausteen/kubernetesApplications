@@ -4,7 +4,7 @@ metadata:
   name: longhorn
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "50"
+    argocd.argoproj.io/sync-wave: "60"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -15,24 +15,13 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: longhorn-system
   syncPolicy:
     automated:
       enabled: true
       prune: true
       selfHeal: true
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: privileged
-        pod-security.kubernetes.io/enforce-version: latest
-        pod-security.kubernetes.io/audit: privileged
-        pod-security.kubernetes.io/audit-version: latest
-        pod-security.kubernetes.io/warn: privileged
-        pod-security.kubernetes.io/warn-version: latest
     retry:
       limit: 5
       backoff:
         duration: 5s
         factor: 2
-    syncOptions:
-      - CreateNamespace=true

@@ -20,8 +20,6 @@ hubble:
       - http
       - icmp
       - tcp
-  peerService:
-    clusterDomain: kubernetes.internal
   relay:
     enabled: true
   ui:

@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: gateway-api
+  name: custom-resource-definitions
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "70"
+    argocd.argoproj.io/sync-wave: "10"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/hausteen/kubernetesApplications.git
-    path: gatewayApi
+    path: customResourceDefinitions
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc

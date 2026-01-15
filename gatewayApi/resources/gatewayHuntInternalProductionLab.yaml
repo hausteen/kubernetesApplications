@@ -2,10 +2,10 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
-  name: huntInternalProductionLab
-  namespace: gatewayApi
+  name: hunt-internal-production-lab
+  namespace: gateway-api
 spec:
-  gatewayClassName: clusterGatewayClass
+  gatewayClassName: gateway-class
   listeners:
     - name: http
       protocol: HTTP
@@ -22,5 +22,5 @@ spec:
       tls:
         mode: Terminate
         certificateRefs:
-          - name: huntInternalProductionLabTlsTerminationSecret
-            namespace: gatewayApi
+          - name: hunt-internal-production-lab-tls-termination-secret
+            namespace: gateway-api

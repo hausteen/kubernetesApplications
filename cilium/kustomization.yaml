@@ -3,11 +3,11 @@ kind: Kustomization
 helmCharts:
   - name: cilium
     repo: https://helm.cilium.io/
-    version: 1.34.0
+    version: 1.18.6
     namespace: kube-system
     includeCRDs: true
     valuesFile: values.yaml
 resources:
-  - resources/layer2Announcements.yaml
   - resources/loadBalancerIpAddressManagement.yaml
+  - resources/layer2Announcements.yaml
   - resources/allowIstioHealthProbes.yaml
