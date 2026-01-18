@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: envoy-gateway-system
 helmCharts:
   - name: gateway-helm
-    repo: docker.io/envoyproxy
+    repo: oci://docker.io/envoyproxy
     version: 1.6.2
     namespace: envoy-gateway-system
     includeCRDs: false # i install them elsewhere
