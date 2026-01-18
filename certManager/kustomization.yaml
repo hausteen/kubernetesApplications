@@ -6,6 +6,7 @@ helmCharts:
     version: 1.19.2
     namespace: cert-manager
     includeCRDs: true
+    valuesFile: values.yaml
 resources:
   - resources/selfsignedIssuer.yaml
   - resources/selfsignedRootCaCertificate.yaml
