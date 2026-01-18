@@ -6,7 +6,9 @@ metadata:
   namespace: gateway-api
 spec:
   gatewayClassName: gateway-class
-  address: 192.168.20.81
+  addresses:
+    - type: IPAddress
+      value: 192.168.20.81
   listeners:
     - name: http
       protocol: HTTP
