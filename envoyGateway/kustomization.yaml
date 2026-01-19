@@ -7,4 +7,3 @@ helmCharts:
     version: 1.6.2
     namespace: envoy-gateway-system
     includeCRDs: true
-    valuesFile: values.yaml

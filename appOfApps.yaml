@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hausteen/kubernetesApplications.git
-    targetRevision: HEAD
+    targetRevision: main
     path: apps
   destination:
     server: https://kubernetes.default.svc
