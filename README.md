@@ -15,15 +15,20 @@ I am using the app of apps pattern in Argo CD to deploy and manage Kubernetes ap
 | longhorn | 60 |
 | gatewayApi | 70 |
 
-## dependency order
+## dependency list
 
-| name | dependency order | reason |
-| ---- | ---------------- | ------ |
-| namespaceCreation | run first | namespaces must exist before everything else |
-| customResourceDefinitions | needs namespaceCreation | these can be namespace scoped |
-| argocd | run whenever | has no dependencies that have not been met by the time this repo's code is running. best to run these sooner than later though since they are critical to a healthy cluster |
-| cilium | run whenever | has no dependencies that have not been met by the time this repo's code is running. best to run these sooner than later though since they are critical to a healthy cluster |
-| certManager | needs namespaceCreation |  |
-| envoyGateway | needs namespaceCreation, certmanager |  |
-| longhorn | needs namespaceCreation |  |
-| gatewayApi | needs namespaceCreation, certManager, envoyGateway |  |
+| name | dependency list |
+| ---- | ---------------- |
+| namespaceCreation | none |
+| customResourceDefinitions | namespaceCreation |
+| argocd | none |
+| cilium | none |
+| certManager | namespaceCreation |
+| envoyGateway | namespaceCreation, certmanager |
+| longhorn | namespaceCreation |
+| gatewayApi | namespaceCreation, certManager, envoyGateway |
+
+## pod security standard
+
+By default, this cluster is using the level = restricted; for all 3 modes = enforce, audit, and warn.
+Every namespace receives this level unless explicity overridden.

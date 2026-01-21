@@ -7,5 +7,5 @@ resources:
   - resources/longhorn.yaml
 
 # Other namespaces
-# argocd            is created by opentofu when i bootstrap the kubernetes cluster
-# cilium-secrets    is created by cilium when the cluster is bootstrapped
+# argocd            is created when the cluster is bootstrapped initially
+# cilium-secrets    is created when the cluster is bootstrapped initially
