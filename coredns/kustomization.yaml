@@ -6,3 +6,10 @@ resources:
   - resources/configmapZonefile.yaml
   - resources/service.yaml
   - resources/deployment.yaml
+
+# Note:
+# the reason why i am not using the helm version is because
+# the helm version bundles a default zone that i can not
+# disable. its also geared for running as the main kubernetes
+# dns service. i am not using mine that way so i want total
+# control over how it runs.
