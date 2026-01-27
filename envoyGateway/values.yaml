@@ -4,3 +4,8 @@ crds:
     channel: experimental
   envoyGateway:
     enabled: true
+config:
+  envoyGateway:
+    logging:
+      level:
+        default: "trace"
