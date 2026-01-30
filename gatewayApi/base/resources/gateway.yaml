@@ -4,7 +4,6 @@ metadata:
   name: huntinternal
   annotations:
     argocd.argoproj.io/sync-wave: "30"
-    argocd.argoproj.io/hook: PostSync
 spec:
   gatewayClassName: placeholder-gatewayclass
   infrastructure:

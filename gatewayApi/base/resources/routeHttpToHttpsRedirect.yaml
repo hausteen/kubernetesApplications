@@ -4,7 +4,6 @@ metadata:
   name: http-to-https-redirect
   annotations:
     argocd.argoproj.io/sync-wave: "40"
-    argocd.argoproj.io/hook: PostSync
 spec:
   parentRefs:
     - name: huntinternal

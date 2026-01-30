@@ -4,7 +4,6 @@ metadata:
   name: gateway-huntinternal-tls-termination
   annotations:
     argocd.argoproj.io/sync-wave: "20"
-    argocd.argoproj.io/hook: PostSync
 spec:
   secretName: gateway-huntinternal-tls-termination
   issuerRef:

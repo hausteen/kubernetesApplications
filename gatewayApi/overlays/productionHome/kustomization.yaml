@@ -5,19 +5,13 @@ helmCharts:
     repo: oci://docker.io/envoyproxy
     version: 1.6.3
     namespace: productionhome-gatewayapi
-    includeCRDs: true
+    includeCRDs: false
     valuesFile: values.yaml
 namespace: productionhome-gatewayapi
 resources:
   - ../../base/
   - resources/envoyProxy.yaml
 patches:
-  - path: patches/namespace.yaml
-    target:
-      kind: Namespace
-      name: placeholder-gatewayapi
-    options:
-      allowNameChange: true
   - path: patches/gatewayClass.yaml
     target:
       kind: GatewayClass

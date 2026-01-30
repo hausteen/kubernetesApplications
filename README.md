@@ -6,6 +6,8 @@ I am using the app of apps pattern in Argo CD to deploy and manage Kubernetes ap
 
 | name | sync wave |
 | ---- | --------- |
+| namespaceCreation | 0 |
+| customResourceDefinitions | 5 |
 | certManager | 10 |
 | gatewayApi | 20 |
 | cilium | 30 |
@@ -17,12 +19,14 @@ I am using the app of apps pattern in Argo CD to deploy and manage Kubernetes ap
 
 | name | dependency list |
 | ---- | ---------------- |
-| certManager | none |
-| gatewayApi | certManager |
+| namespaceCreation | none |
+| customResourceDefinitions | none |
+| certManager | namespaceCreation |
+| gatewayApi | namespaceCreation, customResourceDefinitions, certManager |
 | cilium | gatewayApi |
-| longhorn | gatewayApi |
+| longhorn | namespaceCreation, gatewayApi |
 | argocd | gatewayApi |
-| coredns | gatewayApi |
+| coredns | namespaceCreation, gatewayApi |
 
 I am putting the gateway api routes with each application. That means then that gateway api and
 certificates have to be in place before the other applications get installed.

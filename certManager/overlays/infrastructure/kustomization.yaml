@@ -9,7 +9,7 @@ helmCharts:
     includeCRDs: true
     valuesFile: values.yaml
 resources:
-  - resources/namespace.yaml
+  - resources/sleep.yaml
   - resources/selfsignedIssuer.yaml
   - resources/selfsignedRootCaCertificate.yaml
   - resources/huntInternalClusterIssuer.yaml

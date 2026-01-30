@@ -13,12 +13,6 @@ patches:
     target:
       kind: TCPRoute
       name: coredns
-  - path: patches/namespace.yaml
-    target:
-      kind: Namespace
-      name: placeholder-coredns
-    options:
-      allowNameChange: true
 
 # note:
 # the reason why i am not using the helm version is because

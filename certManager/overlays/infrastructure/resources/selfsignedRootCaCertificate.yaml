@@ -3,8 +3,7 @@ kind: Certificate
 metadata:
   name: selfsigned-root-ca
   annotations:
-    argocd.argoproj.io/sync-wave: "20"
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "30"
 spec:
   secretName: selfsigned-root-ca
   issuerRef:

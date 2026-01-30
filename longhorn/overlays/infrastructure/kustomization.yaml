@@ -9,7 +9,6 @@ helmCharts:
     includeCRDs: true
     valuesFile: values.yaml
 resources:
-  - resources/namespace.yaml
   - resources/routeLonghorn.yaml
 
 # there is no kustomize base intentionally.

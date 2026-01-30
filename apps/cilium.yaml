@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hausteen/kubernetesApplications.git
-    path: cilium/overlays/productionHome
+    path: cilium/overlays/infrastructure
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc

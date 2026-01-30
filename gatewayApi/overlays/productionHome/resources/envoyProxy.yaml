@@ -3,8 +3,7 @@ kind: EnvoyProxy
 metadata:
   name: huntinternal
   annotations:
-    argocd.argoproj.io/sync-wave: "0"
-    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   provider:
     type: Kubernetes
