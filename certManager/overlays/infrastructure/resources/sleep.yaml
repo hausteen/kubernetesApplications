@@ -16,9 +16,20 @@ spec:
     spec:
       restartPolicy: Never
       containers:
-      - name: sleep
-        image: alpine:latest
-        command: ["/bin/sh", "-c", "sleep 300"] # 5 min
+        - name: sleep
+          image: alpine:latest
+          command: ["/bin/sh", "-c", "sleep 300"] # 5 min
+          securityContext:
+            seccompProfile:
+              type: RuntimeDefault
+            runAsNonRoot: true
+            runAsUser: 1000
+            runAsGroup: 1000
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop:
+                - ALL
 
 # This job exists to give enough time for cert-manager to
 # fully start, create all the certs, inject the ca bundle
