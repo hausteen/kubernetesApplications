@@ -29,3 +29,5 @@ spec:
         certificateRefs:
           - name: gateway-huntinternal-tls-termination
             namespace: placeholder-gatewayapi
+            group: ""
+            kind: Secret

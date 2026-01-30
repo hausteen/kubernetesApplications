@@ -10,10 +10,14 @@ spec:
     - name: huntinternal
       namespace: productionhome-gatewayapi
       sectionName: dns-udp
+      group: gateway.networking.k8s.io
+      kind: Gateway
   rules:
     - backendRefs:
         - name: coredns
           port: 53
+          group: ""
+          kind: Service
 ...
 
 ---
@@ -28,8 +32,12 @@ spec:
     - name: huntinternal
       namespace: productionhome-gatewayapi
       sectionName: dns-tcp
+      group: gateway.networking.k8s.io
+      kind: Gateway
   rules:
     - backendRefs:
         - name: coredns
           port: 53
+          group: ""
+          kind: Service
 ...
