@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/hausteen/kubernetesApplications.git
-    path: customResourceDefinitions/overlays/infrastructure
+    path: customResourceDefinitions/
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc

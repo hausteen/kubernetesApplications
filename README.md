@@ -8,15 +8,12 @@ I am using the app of apps pattern in Argo CD to deploy and manage Kubernetes ap
 | ---- | --------- |
 | namespaceCreation | 0 |
 | customResourceDefinitions | 10 |
-| certManager | 20 |
-| argocd | 30 |
-| cilium | 40 |
-| longhorn | 50 |
-| certificateCreation | 60 |
-| envoyGateway | 70 |
-| coredns | 80 |
-| gatewayApiInfrastructure | 90 |
-| gatewayApiProductionHome | 100 |
+| certManager |  |
+| argocd |  |
+| longhorn |  |
+| certificateCreation |  |
+| coredns |  |
+| gatewayApi |  |
 
 ## dependency list
 
@@ -26,15 +23,10 @@ I am using the app of apps pattern in Argo CD to deploy and manage Kubernetes ap
 | customResourceDefinitions | none |
 | certManager | namespaceCreation |
 | argocd | none |
-| cilium | none |
 | longhorn | namespaceCreation |
 | certificateCreation | certManager |
-| envoyGateway | customResourceDefinitions |
 | coredns | namespaceCreation |
-| gatewayApiInfrastructure | namespaceCreation, certManager |
-| gatewayApiProductionHome | namespaceCreation, certManager, gatewayApiInfrastructure |
-
-We need to give certManager and envoyGateway as much time for them both to set up their certificates before we start calling them.
+| gatewayApiProductionHome | namespaceCreation, certManager, gatewayApi |
 
 ## pod security admission standard
 

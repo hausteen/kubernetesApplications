@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: argocd-cmd-params-cm
-data:
-  server.insecure: "true" # this must stay as a string. we don't need argocd to handle tls since gateway api will terminate tls

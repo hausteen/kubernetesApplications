@@ -1,0 +1,56 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd-waypoint-tls-termination
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  secretName: argocd-waypoint-tls-termination
+  issuerRef:
+    name: huntinternal
+    kind: ClusterIssuer
+    group: cert-manager.io
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  isCA: false
+  subject:
+    countries:
+      - usa
+    organizations:
+      - hunt
+  dnsNames:
+    - "argocd.hunt.internal"
+  duration: 720h # 30 days * 24 hours
+  renewBefore: 120h # 5 days before it ends. 5 days * 24 hours
+...
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: longhorn-system-waypoint-tls-termination
+  namespace: longhorn-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  secretName: longhorn-system-waypoint-tls-termination
+  issuerRef:
+    name: huntinternal
+    kind: ClusterIssuer
+    group: cert-manager.io
+  privateKey:
+    algorithm: ECDSA
+    size: 256
+  isCA: false
+  subject:
+    countries:
+      - usa
+    organizations:
+      - hunt
+  dnsNames:
+    - "longhorn.hunt.internal"
+  duration: 720h # 30 days * 24 hours
+  renewBefore: 120h # 5 days before it ends. 5 days * 24 hours
+...

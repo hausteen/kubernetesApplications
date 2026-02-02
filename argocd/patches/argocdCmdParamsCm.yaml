@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-cmd-params-cm
+  labels:
+    app.kubernetes.io/part-of: argocd
+data:
+  server.insecure: "true" # this must stay as a string. we don't need argocd to handle tls since gateway api will terminate tls
