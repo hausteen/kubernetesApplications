@@ -1,46 +1,46 @@
-# ---
-# apiVersion: gateway.networking.k8s.io/v1
-# kind: HTTPRoute
-# metadata:
-#   name: longhorn-dashboard
-#   namespace: longhorn-system
-#   annotations:
-#     argocd.argoproj.io/sync-wave: "20"
-# spec:
-#   parentRefs:
-#     - name: waypoint
-#       sectionName: https
-#   hostnames:
-#     - longhorn.hunt.internal
-#   rules:
-#     - matches:
-#         - path:
-#             type: PathPrefix
-#             value: /
-#       backendRefs:
-#         - name: longhorn-frontend
-#           port: 80
-# ...
-# ---
-# apiVersion: gateway.networking.k8s.io/v1
-# kind: HTTPRoute
-# metadata:
-#   name: http-to-https-redirect
-#   namespace: longhorn-system
-#   annotations:
-#     argocd.argoproj.io/sync-wave: "20"
-# spec:
-#   parentRefs:
-#     - name: waypoint
-#       sectionName: http
-#   rules:
-#     - filters:
-#         - type: RequestRedirect
-#           requestRedirect:
-#             scheme: https
-#             statusCode: 301 # permanent redirect
-#       matches:
-#         - path:
-#             type: PathPrefix
-#             value: /
-# ...
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: longhorn-dashboard
+  namespace: longhorn-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  parentRefs:
+    - name: external
+      sectionName: https
+  hostnames:
+    - longhorn.hunt.internal
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: longhorn-frontend
+          port: 80
+...
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: http-to-https-redirect
+  namespace: longhorn-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "20"
+spec:
+  parentRefs:
+    - name: external
+      sectionName: http
+  rules:
+    - filters:
+        - type: RequestRedirect
+          requestRedirect:
+            scheme: https
+            statusCode: 301 # permanent redirect
+      matches:
+        - path:
+            type: PathPrefix
+            value: /
+...
