@@ -7,3 +7,4 @@ resources:
   - resources/gateway.yaml
   - resources/routeArgocd.yaml
   - resources/routeLonghorn.yaml
+  - resources/routeHttpToHttpsRedirect.yaml
