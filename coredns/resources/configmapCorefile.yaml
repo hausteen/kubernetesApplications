@@ -10,7 +10,7 @@ data:
       cache 30
       errors
       auto {
-        directory /zones/
+        directory /zones
         reload 30s
       }
       health # only set 1 time for all the zones. its a global setting.
