@@ -27,3 +27,6 @@ spec:
         factor: 2
     syncOptions:
       - ServerSideApply=true
+
+# the out of sync bug in argocd (divisor: '0') is patched in the master branch of istio.
+# just waiting for that to be released.
