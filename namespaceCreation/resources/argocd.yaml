@@ -3,5 +3,5 @@ kind: Namespace
 metadata:
   name: argocd
   # labels:
-    # istio.io/dataplane-mode: ambient
+    # istio.io/dataplane-mode: ambient # the cluster can't bootstrap with argocd added to the mesh...
     # istio.io/use-waypoint: waypoint
