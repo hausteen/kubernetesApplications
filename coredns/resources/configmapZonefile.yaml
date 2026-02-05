@@ -16,3 +16,4 @@ data:
     dns       30 IN A 192.168.20.90
     argocd    30 IN A 192.168.20.80
     longhorn  30 IN A 192.168.20.80
+    testing   30 IN A 192.168.20.123
