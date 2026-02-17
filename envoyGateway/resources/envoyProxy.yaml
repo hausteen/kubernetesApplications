@@ -18,5 +18,3 @@ spec:
   telemetry:
     accessLog:
       disable: false
-      settings: # leave blank for default settings
-    tracing: # leave blank for default settings
